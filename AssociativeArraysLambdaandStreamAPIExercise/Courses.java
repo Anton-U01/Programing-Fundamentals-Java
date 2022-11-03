@@ -6,8 +6,8 @@ public class Courses {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String input = scan.nextLine();
-        Map<String,List<String>> courses = new LinkedHashMap<>();
-        while(!input.equals("end")){
+        Map<String, List<String>> courses = new LinkedHashMap<>();
+        while(!input.equals("end")) {
             String[] data = input.split(" : ");
             String course = data[0];
             String name = data[1];
@@ -21,10 +21,7 @@ public class Courses {
         }
         for (Map.Entry<String, List<String>> entry : courses.entrySet()) {
             System.out.println(entry.getKey() + ": " + entry.getValue().size());
-            List<String> names = entry.getValue();
-            for (String name : names) {
-                System.out.println("-- " + name);
-            }
+            entry.getValue().forEach(s -> System.out.println("-- " + s));
         }
     }
 }
